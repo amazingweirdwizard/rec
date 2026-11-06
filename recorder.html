@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Screen · Enregistreur local</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="webm-duration.js" defer></script>
+  <script src="element-capture.js" defer></script>
+  <script src="tab-sources.js" defer></script>
+  <script src="recorder.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="recorder.html"><img src="icon.svg" width="36" height="36" alt="">Screen<span>LOCAL</span></a><span class="privacy">Aucune vidéo envoyée en ligne</span></header>
+  <main>
+    <div class="intro"><p class="eyebrow">VOTRE ÉCRAN. VOTRE HISTOIRE.</p><h1>Capturez l’essentiel.</h1><p>Une idée à montrer, un tutoriel à partager.<br>Enregistrez simplement, gardez tout chez vous.</p></div>
+    <section class="studio" aria-label="Enregistreur">
+      <div class="preview">
+        <video id="video" playsinline muted hidden aria-label="Aperçu de la capture"></video>
+        <div id="placeholder"><span class="screen-symbol" aria-hidden="true">▣</span><h2>Prêt quand vous l’êtes.</h2><p>Choisissez un onglet Firefox, un élément HTML ou votre écran.</p></div>
+        <span id="liveBadge" class="live-badge" hidden>● EN DIRECT</span>
+      </div>
+      <div class="panel">
+        <div class="session"><span id="status" role="status" aria-live="polite">Prêt à enregistrer</span><time id="timer" aria-label="Durée enregistrée">00:00</time></div>
+        <div class="capture-mode"><label for="mode">Que voulez-vous enregistrer ?</label><select id="mode"><option value="tab">Onglet Firefox · expérimental</option><option value="element">Élément HTML · expérimental</option><option value="screen">Écran ou fenêtre</option></select><div id="tabSources" class="tab-sources"><label for="tabSource">Onglet Firefox</label><select id="tabSource"><option value="">Chargement des onglets…</option></select><button id="refreshTabs" type="button">Actualiser</button><p>Capture locale de la zone visible de la page, jusqu’à 5 images/s. Les animations en arrière-plan peuvent ralentir. Ce mode demande l’accès aux pages et ne capture pas le son du site.</p></div><button id="pickElement" hidden>Choisir un élément dans la page</button><p id="elementSelection" hidden>Choisissez un onglet ci-dessus, puis sélectionnez un élément dans sa page. Ce mode demande une autorisation d’accès aux pages pour les captures locales. Jusqu’à 5 images/s ; les animations en arrière-plan peuvent ralentir. Aucun son du site n’est capturé.</p></div>
+        <div class="settings"><label class="mic"><input id="microphone" type="checkbox"><span><strong>Microphone</strong><small>Ajoutez votre voix</small></span></label><p>Cette version capture l’image et, si activé, le microphone. Le son du système n’est pas enregistré.</p></div>
+        <div class="actions"><button id="start" class="primary">● Démarrer l’enregistrement</button><button id="pause" hidden>Mettre en pause</button><button id="stop" class="stop" hidden>■ Terminer</button></div>
+        <p id="captureSource" class="message">Source : choisissez un onglet Firefox dans la liste.</p>
+        <p id="message" class="message" role="status" aria-live="polite">Les onglets Firefox sont proposés en priorité. La capture reste locale.</p>
+        <div id="result" class="result" hidden><div><strong>Votre vidéo est prête.</strong><p id="fileInfo"></p></div><a id="download" class="primary" download>Télécharger la vidéo</a><p>Enregistrez le fichier avant de fermer cet onglet ou de démarrer une nouvelle capture.</p></div>
+      </div>
+    </section>
+    <footer><span>01 · Choisissez une source</span><span>02 · Enregistrez à votre rythme</span><span>03 · Téléchargez en WebM</span></footer>
+    <p class="note">Gardez cet onglet ouvert pendant la capture. La vidéo reste en mémoire jusqu’au téléchargement ; privilégiez les sessions courtes.</p>
+  </main>
+</body>
+</html>

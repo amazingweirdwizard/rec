@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Screen — Enregistreur local",
+  "version": "0.3.0",
+  "description": "Enregistrez votre écran et votre microphone, puis téléchargez votre vidéo. Tout reste sur votre ordinateur.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "screen-local@screen.example",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
+  "action": { "default_title": "Ouvrir Screen", "default_icon": "icon.svg" },
+  "icons": { "48": "icon.svg", "96": "icon.svg" },
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "optional_host_permissions": ["<all_urls>"],
+  "background": { "scripts": ["background.js"] },
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'none'" }
+}
